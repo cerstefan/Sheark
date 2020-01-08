@@ -42,9 +42,7 @@
                                                                                    ,#%&&%                                                                      
                                                                                                                                                                
                                                                                                                                                                
-                                                                                                                                                               
-                                                                                                                                                               
-</span></code>
+                                                                                                                                                             
 
 
 			OROMAIOS.RO
