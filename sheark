@@ -1,0 +1,110 @@
+### ! sa pui clear la inceput, ca textul sa stea cat mai mult pe ecrac
+### ! sa pui permisiuni
+#0 = de completat
+#
+#
+#0 SA-L FACI SA VERIFICE PERMISIUNILE FOLDERULUI IN CARE VREI SA CAUTI
+#
+#
+#!/bin/bash
+
+# SETAREA VARIABILELOR
+# 	u = $1 = director in care se cauta
+# 	tex_de_ca = $2 = text de cautat
+u=$1
+tex_de_ca=$2
+
+#culorile textului
+blue="\e[36m"
+default="\e[39m"
+
+
+#ADAUGA FISIERUL IN PATH PRIN ~/.BASHRC
+#VERIFICA DACA FISIERUL ESTE IN .BASHRC
+#variabila DIR arata directorul din care este rulat programul
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+#verifica daca se afla textul sheark in fisierul .bashrc
+if [ "sheark" == "$(cat ~/.bashrc | grep "sheark" | cut -d ':' -f 1 | cut -d '/' -f 5)" ]
+then
+	zerox=0
+else
+	echo "export PATH=\"$DIR:\$PATH\"" >> ~/.bashrc
+	source ~/.bashrc
+fi
+
+clear
+echo
+echo " ___  _   _  ____    __    ____  _  _ ";
+echo "/ __)( )_( )( ___)  /__\  (  _ \( )/ )";
+echo "\__ \ ) _ (  )__)  /(__)\  )   / )  ( ";
+echo "(___/(_) (_)(____)(__)(__)(_)\_)(_)\_)";
+echo
+echo ''
+echo -e "$blue"'                    /|          .'
+echo '                  O/  ___/|     .'
+echo '                 \ o   __ |         .'
+echo '                  \___/  \|      .'
+echo -e "$default"
+echo
+echo '                  CREAT DE CERLINCA STEFAN'
+echo '    FIRST V RO       	     OROMAIOS.RO'
+echo '                  ---------------------'
+echo
+echo " Utilizare: bash sheark folder text"
+echo " Exemplu: bash sheark Desktop salut"
+echo " Iti recomand sa rulezi acest program avand drepturi de root, pentru a putea cauta in orice fisier."
+echo ""
+	#SE VERIFICA EXISTENTA UNUI ARGUMENT IN LINIA DE COMANDA
+if [ $# -lt 1 ]
+then
+	read -p " Introdu folderul in care sa caute: " u
+    read -p " Introdu textul de cautat: " tex_de_ca
+elif [ $# -eq 1 ]
+then
+	u=$1
+    tex_de_ca=0
+    read -p " Introdu textul de cautat: " tex_de_ca
+elif [ $# -eq 2 ]
+then
+	u=$1
+    tex_de_ca=$2
+elif [ $# -gt 2 ]
+then
+	echo " Ai introdus mai multe argumente, te rog sa introduci maxim doua argumente"
+    	echo " Utilizare: bash sheark.sh folder text"
+	read -p " Introdu folderul in care sa caute: " u
+	read -p " Introdu textul de cautat: " tex_de_ca
+fi
+	# CREAZA FISIERUL DIRECTOR2 
+#	if [ -e .director2 ];
+#	then
+#		echo " Fisierul director2 exista, sigur vrei sa il stergi? [Y] sau [N] "
+#   	read inputt
+#    	if [ $inputt == "n" ]; 
+#    	then 
+#    		exit 
+#   		elif [ $inputt == "y" ]; 
+#    	then 
+#    		echo "Foarte bine!" 
+#    	elif [ $inputt == "Y" ];
+#    	then 
+#    		echo "Foarte bine!" 
+#    	else 
+#    		exit 
+ #   	fi
+
+	#PROCESUL DE CAUTARE
+	echo ""
+	source .search.sh
+	
+
+	
+	### SELECTIE DIN LISTA REZULTATELOR Consola2
+	source .consola2.sh
+	
+#STERGE FISIERELE DE PE LANGA
+rm .director2 .trash_mic .afisschimbabil .afisschimbabil_fin  2> /dev/null
+
+
+
+#END

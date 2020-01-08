@@ -1,0 +1,61 @@
+# AFISARE CONSOLA2
+# CE SE AFISEAZA INAINTE DE CONSOLA
+	clear
+	echo -e \s \s \s \s --------------------------------------- sheark oromaios.ro
+	echo ""
+	#NU S-A GASIT NICI UN TEXT IN FOLDERUL $u
+	if [ ! -e .trash_mic ]
+	then
+		echo " Nu a fost gasit textul \"${tex_de_ca}\" in folderul $u."
+	else
+		echo -e "$blue"
+		cat .trash_mic
+		echo -e "$default"
+	fi
+
+	echo ""	
+	echo ""
+    
+    
+	# SELECTIE DIN LISTA REZULTATELOR Consola2
+	echo " Sheark console"
+	echo " Ai la dispozitie urmatoarele comenzi: (help) (ls) (cat) (mod) (show) (sheark) (desc) (exit)"
+	echo " Pentru a afla mai multe informatii introdu comanda: help"
+	
+#	echo " desc (descrie)"
+#	echo " Afiseaza mai multe detalii despre o comanda."
+#	echo " Se introduce: desc comanda"
+#	echo " Exemplu: desc ls"
+#
+#	echo " ls (listeaza)"
+#	echo " Afiseaza locatia unui fisier selectat."
+#	echo " Se introduce: ls fisier_identificat_prin_cifra"
+#	echo " Exemplu: ls 300"
+#
+#	echo " cat (concatenate)"
+#	echo " Afiseaza continutul unui fisier selectat"
+#	echo " Se introduce: cat fisier_identificat_prin_cifra"
+#	echo " Exemplu: cat 300"
+#
+#	echo " mod (modifica)"
+#	echo " Modifica un fisier folosind vim. Pentru a iesi din acel fisier trebuie sa introduceti in modul de comanda: ':q'"
+#	echo " Se introduce: mod fisier_identificat_prin_cifra"
+#	echo " Exemplu: mod 300"
+#
+#	echo " show (arata)"
+#	echo " Afiseaza fisierele valide, asupra carora poti da anumite comenzi. Fisierele valide sunt identificate printr-o cifra pozitionata intre doua diez-uri ca in exemplul #1#, #300# etc."
+#	echo " Se introduce: show"
+#
+#	echo " sheark (Sheark este numele programului, si se refera la cautare)"
+#	echo " Cauta un text intr-un folder."
+#	echo " Se introduce: sheark folder_in_care_se_cauta fisier_de_cautat"
+#	echo " Exemplu: sheark Desktop oromaios"
+#
+#	echo " exit (iesi din program)"
+#	echo " Iese din program. Inchide consola."
+#	echo " Se introduce: exit"
+
+
+	echo " Comenzile ls, cat si  mod, trebuiesc urmate de numarul care apartine fisierului asupra careia se va folosi comanda, si care este delimitat de doua semne diez (#). EX: #1#, #2#, #3#"
+	echo " --------Exemplu: Consola: mod 1"
+	echo ""
